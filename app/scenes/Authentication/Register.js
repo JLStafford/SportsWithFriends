@@ -9,7 +9,9 @@ import {
 } from "react-native";
 import ViewContainer from "../../components/ViewContainer";
 import StatusbarBackground from "../../components/StatusbarBackground";
+import { firebaseRef } from '../../services/Firebase';
 import { styles } from "./styles";
+import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
   constructor(props) {
@@ -17,8 +19,27 @@ export default class Login extends Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      verifyPassword: ''
     };
+  }
+
+  _logIn = () => {
+    Actions.login()
+  }
+
+  _register = () => {
+    if(this.state.password === this.state.verifyPassword) {
+      firebaseRef.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+        // Handle errors here
+        console.log(error.code)
+        console.log(error.message)
+      })
+
+      Actions.pagecontrol()
+    } else {
+      console.log('Passwords did not match');
+    }
   }
 
   render() {
@@ -38,6 +59,7 @@ export default class Login extends Component {
             placeholder="EMAIL"
             placeholderTextColor="black"
             autoCorrect={false}
+            autoCapitalize='none'
             returnKeyType="next"
             keyboardAppearance="dark"
           />
@@ -51,27 +73,35 @@ export default class Login extends Component {
             placeholderTextColor="black"
             secureTextEntry={true}
             autoCorrect={false}
-            returnKeyType="go"
+            autoCapitalize='none'
+            returnKeyType="next"
             keyboardAppearance="dark"
           />
           <View style={styles.hairline} />
 
           <TextInput
           style={styles.textInput}
-          onChangeText={text => this.setState({ password: text })}
+          onChangeText={text => this.setState({ verifyPassword: text })}
           value={this.state.verifyPassword}
-          placeholder="PASSWORD"
+          placeholder="VERIFY PASSWORD"
           placeholderTextColor="black"
           secureTextEntry={true}
           autoCorrect={false}
-          returnKeyType="go"
+          autoCapitalize='none'
+          returnKeyType="done"
           keyboardAppearance="dark"
         />
         <View style={styles.hairline} />
 
           <View style={styles.login}>
-            <TouchableOpacity style={styles.loginButton}>
+            <TouchableOpacity style={styles.loginButton} onPress={this._register}>
               <Text style={styles.loginButtonText}>Create Account</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.register}>
+            <TouchableOpacity style={styles.registerButton} onPress={this._logIn}>
+              <Text style={styles.registerButtonText}>Have an Account? Login</Text>
             </TouchableOpacity>
           </View>
 

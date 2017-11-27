@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   logoReg: {
     alignItems: 'center',
     marginTop: 125,
-    marginBottom: 165
+    marginBottom: 105
   },
   inputButtons: {
     marginBottom: 60
