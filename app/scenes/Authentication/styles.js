@@ -3,12 +3,12 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   logo: {
     alignItems: 'center',
-    marginTop:125,
+    marginTop:100,
     marginBottom: 175
   },
   logoReg: {
     alignItems: 'center',
-    marginTop: 125,
+    marginTop: 100,
     marginBottom: 105
   },
   inputButtons: {
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   login: {
     paddingLeft: 40,
     paddingRight: 40,
-    marginBottom: 40
+    marginBottom: 20
   },
   loginButton: {
     borderWidth: 1,
@@ -44,13 +44,13 @@ export const styles = StyleSheet.create({
   hairline: {
     height: 1,
     backgroundColor: 'black',
-    marginBottom: 40,
+    marginBottom: 30,
     marginLeft: 40,
     marginRight: 40
   },
   profilePicture: {
     alignItems: 'center',
-    marginTop: 80
+    marginTop: 60
   },
   profilePictureBorder: {
     borderWidth: 1,
@@ -93,5 +93,23 @@ export const styles = StyleSheet.create({
   columnTwo: {
     flex: 1,
     paddingLeft: 70
+  },
+  facebookLogin: {
+    height: 40,
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  facebookLoginButton: {
+    flexDirection: 'row'
+  },
+  facebookLoginButtonText: {
+    color: '#3B579B',
+    fontSize: 17,
+    fontWeight: '400',
+    paddingTop: 5,
+    paddingLeft: 15
+  },
+  fbLogo: {
+
   }
 })

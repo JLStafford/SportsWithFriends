@@ -10,9 +10,10 @@ import {
 } from 'react-native-router-flux';
 import Login from './scenes/Authentication/Login';
 import Register from './scenes/Authentication/Register';
-import Profile from './scenes/Profile';
-import Discover from './scenes/Discover';
+// import Profile from './scenes/Profile';
+// import Discover from './scenes/Discover/Discover';
 import PageControl from './scenes/PageControl/PageControl'
+import SocialLogin from './scenes/Authentication/SocialLogin'
 
 export default class App extends Component {
   render() {
@@ -24,6 +25,12 @@ export default class App extends Component {
           key="login"
           component={Login}
           initial={true}
+          hideNavBar={true}
+          />
+
+          <Scene
+          key="sociallogin"
+          component={SocialLogin}
           hideNavBar={true}
           />
 

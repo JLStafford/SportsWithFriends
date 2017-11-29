@@ -9,7 +9,7 @@ import {
 import PageControlIOS from 'react-native-page-control';
 import ViewContainer from '../../components/ViewContainer';
 import StatusbarBackground from '../../components/StatusbarBackground';
-import Discover from '../Discover';
+import Discover from '../Discover/Discover';
 import Profile from '../Profile';
 
 const win = Dimensions.get('window')

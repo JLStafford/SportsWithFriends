@@ -13,6 +13,7 @@ import _ from 'lodash';
 import { firebaseRef } from '../../services/Firebase';
 import { styles } from './styles';
 import { Actions } from 'react-native-router-flux';
+import { _fbAuth } from '../../services/Facebook';
 
 export default class Login extends Component {
   constructor(props) {
@@ -87,6 +88,13 @@ export default class Login extends Component {
             </TouchableOpacity>
           </View>
 
+          <View style={styles.facebookLogin}>
+            <TouchableOpacity style={styles.facebookLoginButton} onPress={_fbAuth}>
+              <Image source={require('../../resources/FB-f-Logo__blue_29.png')} />
+              <Text style={styles.facebookLoginButtonText}>Login with Facebook</Text>
+            </TouchableOpacity>
+          </View>
+
           <View style={styles.register}>
             <TouchableOpacity style={styles.registerButton} onPress={this._register}>
               <Text style={styles.registerButtonText}>create account</Text>
@@ -98,3 +106,4 @@ export default class Login extends Component {
     );
   }
 }
+
