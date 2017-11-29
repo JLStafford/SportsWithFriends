@@ -44,7 +44,7 @@ export default class ListItems extends Component {
       <List>
         <FlatList
           data={this.state.data}
-          renderItem={({ Item }) => (
+          renderItem={({ item }) => (
             <ListItem
               roundAvatar
               title={`${item.name.first} ${item.name.last}`}

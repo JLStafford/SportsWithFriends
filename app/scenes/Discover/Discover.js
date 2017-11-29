@@ -43,7 +43,7 @@ export default class Discover extends Component {
           <Text>go out, meet new people, play some sports</Text>
           <Text>and have some fun!</Text>
         </View>
-        <ListItem
+        <ListItems
           dataSource={this.state.dataSource}
           renderRow={this._renderRow}
         />

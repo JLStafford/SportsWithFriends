@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   logo: {
     alignItems: 'center',
     marginTop:100,
-    marginBottom: 175
+    marginBottom: 125
   },
   logoReg: {
     alignItems: 'center',
@@ -88,11 +88,11 @@ export const styles = StyleSheet.create({
   },
   columnOne: {
     flex: 1,
-    paddingLeft: 70
+    paddingLeft: 50
   },
   columnTwo: {
     flex: 1,
-    paddingLeft: 70
+    paddingLeft: 30
   },
   facebookLogin: {
     height: 40,
